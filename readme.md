@@ -29,6 +29,3 @@ npm test
 ## license
 
 MIT
-
-assert(equals(query('?a=b'), {a:'b'}));
-assert(equals(query('?suuper=star&caret=rocks'), {caret:'rocks', suuper:'star'}));
