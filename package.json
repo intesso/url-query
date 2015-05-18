@@ -1,0 +1,29 @@
+{
+  "name": "url-query",
+  "version": "1.0.0",
+  "description": "return location.search as object",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/intesso/url-query.git"
+  },
+  "keywords": [
+    "url",
+    "querystring",
+    "object",
+    "query",
+    "search"
+  ],
+  "author": "Andi Neck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intesso/url-query/issues"
+  },
+  "homepage": "https://github.com/intesso/url-query",
+  "devDependencies": {
+    "tape": "^4.0.0"
+  }
+}
