@@ -5,11 +5,11 @@ module.exports = function queryString(search) {
   queryString = queryString.trim().replace(/^(\?)/, '');
   queryString = queryString.split('&');
 
-  var param = {};
-  var query = queryString.forEach(function(query) {
-    var segment = query.split('=');
-    param[segment[0]] = segment.length > 1 ? segment[1] : true;
+  var query = {};
+  queryString.forEach(function(q) {
+    var segment = q.split('=');
+    query[segment[0]] = segment.length > 1 ? segment[1] : true;
   });
 
-  return param;
+  return query;
 };
