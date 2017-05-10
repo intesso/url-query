@@ -1,5 +1,5 @@
 module.exports = function queryString(search) {
-  var queryString = search || typeof location !== 'undefined' && location.search;
+  var queryString = typeof search === 'string' ? search : typeof location !== 'undefined' ? location.search : null;
   if (!queryString) throw new TypeError('search argument missing');
 
   queryString = queryString.trim().replace(/^(\?)/, '');
@@ -8,7 +8,7 @@ module.exports = function queryString(search) {
   var query = {};
   queryString.forEach(function(q) {
     var segment = q.split('=');
-    query[segment[0]] = segment.length > 1 ? segment[1] : true;
+    if (segment[0]) query[segment[0]] = segment.length > 1 ? segment[1] : true;
   });
 
   return query;

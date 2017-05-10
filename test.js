@@ -1,9 +1,13 @@
-var assert = require('assert');
-
+var test = require('tape');
 var query = require('./index'), param;
 
-var equals = require('object-equal');
+test('should parse single query', t => {
+  t.deepEqual(query('?a=b'), { a: 'b' });
+  t.deepEqual(query('?suuper=star&caret=rocks'), { caret: 'rocks', suuper: 'star' });
+  t.end();
+});
 
-assert(equals(query('?a=b'), {a:'b'}));
-assert(equals(query('?suuper=star&caret=rocks'), {caret:'rocks', suuper:'star'}));
-
+test('should parse no query and return empty object', t => {
+  t.deepEqual(query(" "), {});
+  t.end();
+});
